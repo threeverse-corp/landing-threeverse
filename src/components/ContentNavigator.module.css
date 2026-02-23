@@ -1,0 +1,42 @@
+.navigator {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  height: 100%;
+  background-color: black;
+  color: white;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.active {
+  display: block;
+}
+
+.navBtn {
+  position: fixed;
+  bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
