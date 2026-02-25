@@ -21,6 +21,11 @@
   --font-jakarta: 'Jakarta', monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html, body {
   font-family: var(--font-jakarta);

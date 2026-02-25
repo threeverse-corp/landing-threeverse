@@ -2,12 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import Navigator from '../components/Navigator.astro'
 import Menu from '../components/Menu.astro';
+import Logo from "../assets/images/Logo.svg";
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
+  <img src={Logo.src} alt="logo" class="logo" />
   <Menu />
   <Navigator />
 </Layout>
+
+<style>
+  .logo {
+    position: fixed;
+    top: 1.4rem;
+    left: 1.25rem;
+    z-index: 10;
+    height: 4rem;
+    width: auto;
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+      top: 1.7rem;
+      height: 3rem;
+    }
+  }
+</style>
