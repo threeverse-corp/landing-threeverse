@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'TiltWarp';
+  src: url('../assets/fonts/TiltWarp.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Jakarta';
+  src: url('../assets/fonts/PlusJakartaSans.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #0B0B0C;
+  --color-secondary: #00D1FF;
+  --color-accents: #6339F0;
+  --color-text: #F4F4F9;
+
+  --font-tilt-warp: 'TiltWarp', system-ui;
+  --font-jakarta: 'Jakarta', monospace;
+}
+
+
+html, body {
+  font-family: var(--font-jakarta);
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
