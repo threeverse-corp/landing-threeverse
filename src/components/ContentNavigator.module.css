@@ -3,8 +3,6 @@
   width: 100%;
   min-height: 100dvh;
   height: 100%;
-  background-color: black;
-  color: white;
 }
 
 .pages {
@@ -29,7 +27,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
 }
 
