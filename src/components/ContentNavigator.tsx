@@ -1,16 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FirstPage } from "./FirstPage";
 import { SecondPage } from "./SecondPage";
 import { ThirdPage } from "./ThirdPage";
+import { FourthPage } from "./FourthPage";
 import LeftCircle from "../assets/icons/left-circle.svg";
 import RightCircle from "../assets/icons/right-circle.svg";
 import styles from "./ContentNavigator.module.css";
 import Button from "../ui/button/Button";
 
 export default function ContentNavigator() {
-  const pages = [FirstPage, SecondPage, ThirdPage];
+  const pages = [FirstPage, SecondPage, ThirdPage, FourthPage];
   const [current, setCurrent] = useState(0);
 
+  const idToIndex: Record<string, number> = {
+    home: 0,
+    development: 3,
+  }
+  useEffect(() => {
+    const onNavigate = (event: Event) => {
+      const customEvent = event as CustomEvent<{ id: string }>;
+      const id = customEvent.detail?.id;
+      if (!id) return;
+      const idx = idToIndex[id];
+      if (typeof idx === "number") setCurrent(idx);
+    };
+
+    window.addEventListener("navigate", onNavigate);
+    return () => window.removeEventListener("navigate", onNavigate);
+  }, []);
+  
   const total = pages.length;
 
   const goPrev = () => {
@@ -20,6 +38,7 @@ export default function ContentNavigator() {
   const goNext = () => {
     if (current < total - 1) setCurrent((prev) => prev + 1);
   };
+
 
   return (
     <div className={styles.navigator}>
