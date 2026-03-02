@@ -6,7 +6,7 @@ const menuItems = [
   {
     label: "Soluciones",
     children: [
-      { label: "Desarrollo", href: "#" },
+      { label: "Desarrollo", href: "#development" },
       { label: "Diseño", href: "#" },
       { label: "Estrategia", href: "#" },
     ],
@@ -53,6 +53,12 @@ export default function BurgerMenu() {
   const handleSubClick = (child: { label: string; href: string }) => {
     setActiveMain("Soluciones");
     setActiveSub(child.label);
+
+    const targetId = child.href.startsWith("#") ? child.href.slice(1) : child.href;
+
+    window.dispatchEvent(
+      new CustomEvent("navigate", { detail: { id: targetId } })
+    );
     closeAll();
   };
 
@@ -62,7 +68,10 @@ export default function BurgerMenu() {
         key={child.label}
         href={child.href}
         className={`${styles.sublink} ${activeSub === child.label ? styles.activeSub : ""}`}
-        onClick={() => handleSubClick(child)}
+        onClick={(e) => {
+          e.preventDefault();
+          handleSubClick(child);
+        }}
       >
         {child.label}
       </a>
@@ -107,7 +116,9 @@ export default function BurgerMenu() {
                     <a
                       href={item.href}
                       className={`${styles.link} ${isActive ? styles.active : ""}`}
-                      onClick={() => handleMainClick(item)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleMainClick(item)}}
                     >
                       {item.label}
                     </a>
