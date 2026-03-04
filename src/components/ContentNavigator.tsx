@@ -8,6 +8,7 @@ import RightCircle from "../assets/icons/right-circle.svg";
 import styles from "./ContentNavigator.module.css";
 import Button from "../ui/button/Button";
 import { FifthPage } from "./FifthPage";
+import Logo from "../assets/images/Logo.svg";
 
 export default function ContentNavigator() {
   const pages = [FirstPage, SecondPage, ThirdPage, FourthPage, FifthPage];
@@ -16,8 +17,9 @@ export default function ContentNavigator() {
   const idToIndex: Record<string, number> = {
     home: 0,
     development: 3,
-    design: 4
-  }
+    design: 4,
+  };
+
   useEffect(() => {
     const onNavigate = (event: Event) => {
       const customEvent = event as CustomEvent<{ id: string }>;
@@ -30,7 +32,7 @@ export default function ContentNavigator() {
     window.addEventListener("navigate", onNavigate);
     return () => window.removeEventListener("navigate", onNavigate);
   }, []);
-  
+
   const total = pages.length;
 
   const goPrev = () => {
@@ -41,9 +43,9 @@ export default function ContentNavigator() {
     if (current < total - 1) setCurrent((prev) => prev + 1);
   };
 
-
   return (
     <div className={styles.navigator}>
+      {current > 0 && <img src={Logo.src} alt="logo" className={styles.logo} />}
       <div className={styles.pages}>
         {pages.map((Page, index) => (
           <div
