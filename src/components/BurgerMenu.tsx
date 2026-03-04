@@ -7,7 +7,7 @@ const menuItems = [
     label: "Soluciones",
     children: [
       { label: "Desarrollo", href: "#development" },
-      { label: "Diseño", href: "#" },
+      { label: "Diseño", href: "#design" },
       { label: "Estrategia", href: "#" },
     ],
   },

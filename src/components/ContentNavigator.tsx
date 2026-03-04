@@ -7,14 +7,16 @@ import LeftCircle from "../assets/icons/left-circle.svg";
 import RightCircle from "../assets/icons/right-circle.svg";
 import styles from "./ContentNavigator.module.css";
 import Button from "../ui/button/Button";
+import { FifthPage } from "./FifthPage";
 
 export default function ContentNavigator() {
-  const pages = [FirstPage, SecondPage, ThirdPage, FourthPage];
+  const pages = [FirstPage, SecondPage, ThirdPage, FourthPage, FifthPage];
   const [current, setCurrent] = useState(0);
 
   const idToIndex: Record<string, number> = {
     home: 0,
     development: 3,
+    design: 4
   }
   useEffect(() => {
     const onNavigate = (event: Event) => {
