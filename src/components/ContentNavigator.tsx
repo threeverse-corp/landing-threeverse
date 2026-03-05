@@ -1,26 +1,23 @@
-import { useEffect, useState } from "react";
-import { FirstPage } from "./FirstPage";
-import { SecondPage } from "./SecondPage";
-import { ThirdPage } from "./ThirdPage";
-import { FourthPage } from "./FourthPage";
-import { FifthPage } from "./FifthPage";
-import { SixthPage } from "./SixthPage";
+import { useEffect, useState, lazy, Suspense } from "react";
+
 import LeftCircle from "../assets/icons/left-circle.svg";
 import RightCircle from "../assets/icons/right-circle.svg";
 import styles from "./ContentNavigator.module.css";
 import Button from "../ui/button/Button";
 import Logo from "../assets/images/Logo.svg";
 
+const pages = [
+  lazy(() => import("./FirstPage").then((m) => ({ default: m.FirstPage }))),
+  lazy(() => import("./SecondPage").then((m) => ({ default: m.SecondPage }))),
+  lazy(() => import("./ThirdPage").then((m) => ({ default: m.ThirdPage }))),
+  lazy(() => import("./FourthPage").then((m) => ({ default: m.FourthPage }))),
+  lazy(() => import("./FifthPage").then((m) => ({ default: m.FifthPage }))),
+  lazy(() => import("./SixthPage").then((m) => ({ default: m.SixthPage }))),
+];
+
 export default function ContentNavigator() {
-  const pages = [
-    FirstPage,
-    SecondPage,
-    ThirdPage,
-    FourthPage,
-    FifthPage,
-    SixthPage,
-  ];
   const [current, setCurrent] = useState(0);
+  const ActivePage = pages[current];
 
   const idToIndex: Record<string, number> = {
     home: 0,
@@ -55,16 +52,11 @@ export default function ContentNavigator() {
     <div className={styles.navigator}>
       {current > 0 && <img src={Logo.src} alt="logo" className={styles.logo} />}
       <div className={styles.pages}>
-        {pages.map((Page, index) => (
-          <div
-            key={index}
-            className={`${styles.page} ${
-              index === current ? styles.active : ""
-            }`}
-          >
-            <Page />
+        <Suspense fallback={null}>
+          <div key={current} className={styles.pageFadeIn}>
+            <ActivePage />
           </div>
-        ))}
+        </Suspense>
       </div>
 
       {current > 0 && (
