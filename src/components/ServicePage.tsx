@@ -5,7 +5,7 @@ type Props = {
   title: string;
   subtitle: React.ReactNode;
   features: string[];
-  image: ImageMetadata;
+  image: string;
   variant?: "textRight" | "textLeft";
   backgroundImage?: string;
 };
@@ -29,7 +29,7 @@ export const ServicePage = ({
           : undefined
       }
     >
-      <img src={image.src} className={styles.image} />
+      <img src={image} className={styles.image} />
 
       <div className={styles.textContent}>
         <h1 className={styles.title}>{title}</h1>

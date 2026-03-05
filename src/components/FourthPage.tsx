@@ -1,6 +1,6 @@
 import styles from "./ServicePage.module.css";
 import { ServicePage } from "./ServicePage";
-import Image from "../assets/images/development.svg"
+import DevelopmentImage from "../assets/images/development.svg"
 export const FourthPage = () => {
   return (
   <ServicePage
@@ -10,7 +10,7 @@ export const FourthPage = () => {
       <>
         Creamos la infraestructura que sostiene tu <span className={styles.highlight}>crecimiento</span>
       </>}
-    image={Image}
+    image={DevelopmentImage.src}
     features={["Software a medida","Automatizaciones","Plataformas internas","Sistemas escalables"]}
     variant="textRight"
     backgroundImage="/src/assets/images/background-page4.svg"

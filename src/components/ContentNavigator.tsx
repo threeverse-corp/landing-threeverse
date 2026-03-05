@@ -13,6 +13,7 @@ const pages = [
   lazy(() => import("./FourthPage").then((m) => ({ default: m.FourthPage }))),
   lazy(() => import("./FifthPage").then((m) => ({ default: m.FifthPage }))),
   lazy(() => import("./SixthPage").then((m) => ({ default: m.SixthPage }))),
+  lazy(() => import("./SeventhPage").then((m) => ({ default: m.SeventhPage }))),
 ];
 
 export default function ContentNavigator() {
@@ -20,9 +21,11 @@ export default function ContentNavigator() {
   const ActivePage = pages[current];
 
   const idToIndex: Record<string, number> = {
-    home: 0,
+    hero: 0,
     development: 3,
     design: 4,
+    strategy:5,
+    process:6,
   };
 
   useEffect(() => {
@@ -52,7 +55,7 @@ export default function ContentNavigator() {
     <div className={styles.navigator}>
       {current > 0 && <img src={Logo.src} alt="logo" className={styles.logo} />}
       <div className={styles.pages}>
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className={styles.loaderPage} />}>
           <div key={current} className={styles.pageFadeIn}>
             <ActivePage />
           </div>

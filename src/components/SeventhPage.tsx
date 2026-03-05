@@ -30,7 +30,7 @@ const steps = [
   },
 ];
 
-export default function SeventhPage() {
+export const SeventhPage = () => {
   return (
     <div id="process" className={styles.wrapper}>
         <div className={styles.contentTitle}>
