@@ -1,0 +1,116 @@
+.step{
+  display: flex;
+  
+}
+.stepNumber{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/images/circleStep.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 4px;
+  height: 5rem;
+  width: 5rem;
+}
+
+.number{
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-tilt-warp);
+  font-size: clamp(1.5rem,3vw,4rem);
+  color: var(--color-secondary);
+}
+
+.line{
+  position: relative;
+  left: -4px;
+  top: 20px;
+  width: 10rem;
+  height: 1px;
+
+  background: 
+    var(--color-secondary);
+
+  transform: scaleY(0.5);
+  transform-origin: center;
+}
+.line::after{
+  content: "";
+
+  position: absolute;
+  right: -3px;
+  top: 50%;
+
+  width: 4px;
+  height: 8px;
+
+  background: var(--color-secondary);
+  border-radius: 50%;
+
+  transform: translateY(-50%);
+}
+
+.content{
+  position: relative;
+  left: -25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: end;
+}
+
+.title{
+  font-size: clamp(1.2rem, 1.5vw, 2.1rem);
+  font-style: italic;
+  font-weight: bold;
+}
+.highlight{
+  color: var(--color-secondary);
+}
+.text{
+  white-space: pre-line;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  font-style: italic;
+  text-align: right;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-20px); }
+}
+@keyframes float-mobile {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(10px); }
+}
+@media (max-width: 1024px) {
+.step{
+  animation: float-mobile 15s ease-in-out infinite;
+  justify-content: center;
+  gap: 1rem;
+}
+.stepNumber{
+  padding: 2px;
+  height: 3rem;
+  width: 5rem;
+  
+}
+.line{
+  width: 0;
+}
+.line::after{
+  width:0;
+  height: 0;
+}
+.content{
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+}
+.text{
+  white-space:unset;
+  text-align: left;
+}
+}

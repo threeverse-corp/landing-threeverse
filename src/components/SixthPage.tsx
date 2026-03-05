@@ -5,7 +5,7 @@ import StrategyIcon from "../assets/icons/strategy-icon.svg";
 export const SixthPage = () => {
   return (
     <ServicePage
-      id="development"
+      id="strategy"
       title="ESTRATEGIA"
       subtitle={
         <>
@@ -13,7 +13,7 @@ export const SixthPage = () => {
           <span className={styles.highlight}>crecimiento</span>
         </>
       }
-      imageSrc={StrategyIcon.src}
+      image={StrategyIcon.src}
       features={[
         "Publicidad digital",
         "Consultoría",

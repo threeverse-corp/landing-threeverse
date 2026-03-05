@@ -8,6 +8,7 @@
   align-items: center;
   gap: clamp(1.5rem, 4vw, 2.5rem); /* espacio fluido */
   text-align: center;
+  animation: float 10s ease-in-out infinite;
 }
 
 .title {
@@ -27,6 +28,7 @@
   padding: clamp(0.7rem, 2vw, 0.9rem) clamp(1.2rem, 3vw, 2rem);
   box-shadow: 4px 4px 1.3px 0px #00d1ff80;
   transition: all 0.2s ease;
+  animation: breathe 6s ease-in-out infinite;
 }
 
 .button:hover {
@@ -37,4 +39,19 @@
 .logo {
   width: clamp(220px, 40vw, 428px);
   height: auto;
+}
+@keyframes breathe {
+  0%,100%{
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(0,209,255,0.3));
+  }
+
+  50%{
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 14px rgba(99,57,240,0.6));
+  }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-20px); }
 }

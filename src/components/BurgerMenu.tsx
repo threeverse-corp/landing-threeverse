@@ -2,15 +2,16 @@ import { useState } from "react";
 import styles from "./BurgerMenu.module.css";
 
 const menuItems = [
-  { label: "Inicio", href: "#" },
+  { label: "Inicio", href: "#hero" },
   {
     label: "Soluciones",
     children: [
       { label: "Desarrollo", href: "#development" },
       { label: "Diseño", href: "#design" },
-      { label: "Estrategia", href: "#" },
+      { label: "Estrategia", href: "#strategy" },
     ],
   },
+  { label: "Proceso", href: "#process" },
   { label: "Resultados", href: "#" },
   { label: "Inversión", href: "#" },
   { label: "Contacto", href: "#" },
@@ -37,6 +38,14 @@ export default function BurgerMenu() {
       return !prev;
     });
   };
+  const dispatchNavigateFromHref = (href: string) => {
+    const targetId = href.startsWith("#") ? href.slice(1) : href;
+
+    window.dispatchEvent(
+      new CustomEvent("navigate", { detail: { id: targetId } })
+    );
+    history.replaceState(null, "", `#${targetId}`);
+  };
 
   const handleMainClick = (item: (typeof menuItems)[number]) => {
     setActiveMain(item.label);
@@ -47,6 +56,7 @@ export default function BurgerMenu() {
     }
 
     setActiveSub(null);
+    if (item.href) dispatchNavigateFromHref(item.href);
     closeAll();
   };
 
@@ -54,11 +64,8 @@ export default function BurgerMenu() {
     setActiveMain("Soluciones");
     setActiveSub(child.label);
 
-    const targetId = child.href.startsWith("#") ? child.href.slice(1) : child.href;
+    dispatchNavigateFromHref(child.href);
 
-    window.dispatchEvent(
-      new CustomEvent("navigate", { detail: { id: targetId } })
-    );
     closeAll();
   };
 
