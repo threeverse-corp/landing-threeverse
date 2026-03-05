@@ -26,9 +26,15 @@ export const ServicePage = ({
     <div
       id={id}
       className={`${styles.wrapper} ${styles[variant]}`}
-      style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
+      style={
+        backgroundImage
+          ? { backgroundImage: `url(${backgroundImage})` }
+          : undefined
+      }
     >
-      {lottieSrc && <LottieAnimation src={lottieSrc} className={styles.animation} />}
+      {lottieSrc && (
+        <LottieAnimation src={lottieSrc} className={styles.animation} />
+      )}
       {imageSrc && <img src={imageSrc} className={styles.animation} />}
 
       <div className={styles.textContent}>

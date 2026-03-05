@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   grid-template-rows: 1fr;
@@ -11,19 +11,19 @@
   background-position: center;
 }
 
-.textRight{
+.textRight {
   grid-template-areas: "anim anim anim anim anim text text";
   padding-right: 10%;
   padding-left: 5%;
 }
 
-.textLeft{
+.textLeft {
   grid-template-areas: "text text anim anim anim anim anim";
   padding-right: 5%;
   padding-left: 10%;
 }
 
-.animation{
+.animation {
   grid-area: anim;
   height: 100%;
   max-height: 100vh;
@@ -34,7 +34,7 @@
   animation: float 10s ease-in-out infinite;
 }
 
-.textContent{
+.textContent {
   grid-area: text;
   justify-self: stretch;
   align-self: start;
@@ -43,35 +43,35 @@
   max-width: 100%;
 }
 
-.textRight .textContent{
+.textRight .textContent {
   text-align: right;
   justify-items: end;
 }
 
-.textLeft .textContent{
+.textLeft .textContent {
   text-align: left;
   justify-items: start;
 }
 
-.title{
+.title {
   font-family: var(--font-tilt-warp);
-  font-size: clamp(2.5rem,4vw,6rem);
+  font-size: clamp(2.5rem, 4vw, 6rem);
   letter-spacing: 4px;
   margin-bottom: 1rem;
 }
 
-.subtitle{
+.subtitle {
   position: relative;
   width: 150%;
   font-size: clamp(1rem, 1.2vw, 1.5rem);
   font-style: italic;
 }
 
-.highlight{
+.highlight {
   color: var(--color-secondary);
 }
 
-.features{
+.features {
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
@@ -79,8 +79,12 @@
   font-size: clamp(1.3rem, 1.7vw, 2rem);
 }
 
-.textRight .features{ align-items: flex-end; }
-.textLeft  .features{ align-items: flex-start; }
+.textRight .features {
+  align-items: flex-end;
+}
+.textLeft .features {
+  align-items: flex-start;
+}
 
 .features p:hover {
   color: var(--color-secondary);
@@ -90,17 +94,27 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes float-mobile {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 @media (max-width: 768px) {
-  .wrapper{
+  .wrapper {
     display: flex;
     flex-direction: column-reverse;
     gap: 1rem;
@@ -109,31 +123,32 @@
     height: 100vh;
   }
 
-  .animation{
+  .animation {
     height: 50vh;
     width: 80%;
     overflow: visible;
   }
 
-  .textContent{
+  .textContent {
     margin-top: 6rem;
     animation: float-mobile 10s ease-in-out infinite;
     text-align: center;
     justify-items: center;
   }
 
-  .title{
+  .title {
     text-align: center;
     width: 100%;
     margin-inline-start: 0;
   }
 
-  .subtitle{
+  .subtitle {
     width: 100%;
     text-align: center;
   }
 
-  .textRight .features, .textLeft .features{
+  .textRight .features,
+  .textLeft .features {
     align-items: center;
     text-align: center;
     margin-inline: auto;
