@@ -23,7 +23,7 @@
   padding-left: 10%;
 }
 
-.animation {
+.image{
   grid-area: anim;
   height: 100%;
   max-height: 100vh;
@@ -119,13 +119,14 @@
     flex-direction: column-reverse;
     gap: 1rem;
     justify-content: start;
-    padding-left: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     height: 100vh;
   }
 
-  .animation {
-    height: 50vh;
-    width: 80%;
+  .image{
+    height: 55vh;
+    width: 100%;
     overflow: visible;
   }
 

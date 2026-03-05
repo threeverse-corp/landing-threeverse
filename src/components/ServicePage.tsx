@@ -1,4 +1,3 @@
-import LottieAnimation from "./LottieAnimation";
 import styles from "./ServicePage.module.css";
 
 type Props = {
@@ -6,8 +5,7 @@ type Props = {
   title: string;
   subtitle: React.ReactNode;
   features: string[];
-  lottieSrc?: string;
-  imageSrc?: string;
+  image: ImageMetadata;
   variant?: "textRight" | "textLeft";
   backgroundImage?: string;
 };
@@ -17,8 +15,7 @@ export const ServicePage = ({
   title,
   subtitle,
   features,
-  lottieSrc,
-  imageSrc,
+  image,
   variant = "textRight",
   backgroundImage,
 }: Props) => {
@@ -32,10 +29,7 @@ export const ServicePage = ({
           : undefined
       }
     >
-      {lottieSrc && (
-        <LottieAnimation src={lottieSrc} className={styles.animation} />
-      )}
-      {imageSrc && <img src={imageSrc} className={styles.animation} />}
+      <img src={image.src} className={styles.image} />
 
       <div className={styles.textContent}>
         <h1 className={styles.title}>{title}</h1>

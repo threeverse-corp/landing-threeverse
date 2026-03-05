@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./BurgerMenu.module.css";
 
 const menuItems = [
-  { label: "Inicio", href: "#" },
+  { label: "Inicio", href: "#hero" },
   {
     label: "Soluciones",
     children: [
@@ -11,6 +11,7 @@ const menuItems = [
       { label: "Estrategia", href: "#" },
     ],
   },
+  { label: "Proceso", href: "#process" },
   { label: "Resultados", href: "#" },
   { label: "Inversión", href: "#" },
   { label: "Contacto", href: "#" },
