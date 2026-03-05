@@ -22,7 +22,6 @@ export const SixthPage = () => {
       ]}
       variant="textRight"
       backgroundImage="/src/assets/images/background-page4.svg"
-      customClass={styles.strategyImage}
     />
   );
 };

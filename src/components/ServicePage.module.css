@@ -157,21 +157,3 @@
     gap: 0.5rem;
   }
 }
-
-.strategyImage {
-  width: 150% !important;
-  height: auto !important;
-}
-
-.textRight .strategyImage {
-  margin-left: 170px;
-}
-
-@media (max-width: 768px) {
-  .strategyImage {
-    height: 50vh;
-    width: 80%;
-    overflow: visible;
-  }
-}
-

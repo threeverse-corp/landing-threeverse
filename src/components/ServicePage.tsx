@@ -10,7 +10,6 @@ type Props = {
   imageSrc?: string;
   variant?: "textRight" | "textLeft";
   backgroundImage?: string;
-  customClass?: string;
 };
 
 export const ServicePage = ({
@@ -22,7 +21,6 @@ export const ServicePage = ({
   imageSrc,
   variant = "textRight",
   backgroundImage,
-  customClass = "",
 }: Props) => {
   return (
     <div
@@ -37,9 +35,7 @@ export const ServicePage = ({
       {lottieSrc && (
         <LottieAnimation src={lottieSrc} className={styles.animation} />
       )}
-      {imageSrc && (
-        <img src={imageSrc} className={`${styles.animation} ${customClass}`} />
-      )}
+      {imageSrc && <img src={imageSrc} className={styles.animation} />}
 
       <div className={styles.textContent}>
         <h1 className={styles.title}>{title}</h1>
@@ -54,4 +50,3 @@ export const ServicePage = ({
     </div>
   );
 };
-
