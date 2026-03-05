@@ -1,26 +1,28 @@
 import styles from "./ServicePage.module.css";
 import { ServicePage } from "./ServicePage";
+import StrategyIcon from "../assets/icons/strategy-icon.svg";
 
-export const FourthPage = () => {
+export const SixthPage = () => {
   return (
     <ServicePage
       id="development"
-      title="DESARROLLO"
+      title="ESTRATEGIA"
       subtitle={
         <>
-          Creamos la infraestructura que sostiene tu{" "}
+          Diseñamos el plan que convierte estructura en{" "}
           <span className={styles.highlight}>crecimiento</span>
         </>
       }
-      lottieSrc="/animations/page-4.lottie"
+      imageSrc={StrategyIcon.src}
       features={[
-        "Software a medida",
-        "Automatizaciones",
-        "Plataformas internas",
-        "Sistemas escalables",
+        "Publicidad digital",
+        "Consultoría",
+        "Optimización",
+        "Escalabilidad",
       ]}
       variant="textRight"
       backgroundImage="/src/assets/images/background-page4.svg"
+      customClass={styles.strategyImage}
     />
   );
 };

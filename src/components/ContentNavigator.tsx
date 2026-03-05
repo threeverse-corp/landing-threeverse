@@ -3,15 +3,23 @@ import { FirstPage } from "./FirstPage";
 import { SecondPage } from "./SecondPage";
 import { ThirdPage } from "./ThirdPage";
 import { FourthPage } from "./FourthPage";
+import { FifthPage } from "./FifthPage";
+import { SixthPage } from "./SixthPage";
 import LeftCircle from "../assets/icons/left-circle.svg";
 import RightCircle from "../assets/icons/right-circle.svg";
 import styles from "./ContentNavigator.module.css";
 import Button from "../ui/button/Button";
-import { FifthPage } from "./FifthPage";
 import Logo from "../assets/images/Logo.svg";
 
 export default function ContentNavigator() {
-  const pages = [FirstPage, SecondPage, ThirdPage, FourthPage, FifthPage];
+  const pages = [
+    FirstPage,
+    SecondPage,
+    ThirdPage,
+    FourthPage,
+    FifthPage,
+    SixthPage,
+  ];
   const [current, setCurrent] = useState(0);
 
   const idToIndex: Record<string, number> = {
