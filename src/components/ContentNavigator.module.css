@@ -94,7 +94,7 @@
     transparent 70%
   );
 
-  animation: pagePulse 1.2s ease-in-out infinite;
+  animation: pagePulse 2s ease-in-out infinite;
 }
 
 @keyframes pagePulse{
