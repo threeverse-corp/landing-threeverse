@@ -20,7 +20,6 @@
 }
 
 .button {
-  font-family: "Roboto", sans-serif !important;
   font-weight: bold;
   font-weight: clamp(1rem, 3vw, 0.9rem);
   background: #00d1ff !important;

@@ -12,7 +12,7 @@ const menuItems = [
     ],
   },
   { label: "Proceso", href: "#process" },
-  { label: "Resultados", href: "#" },
+  { label: "Resultados", href: "#results" },
   { label: "Inversión", href: "#" },
   { label: "Contacto", href: "#" },
 ];

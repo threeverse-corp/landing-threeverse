@@ -74,7 +74,7 @@
   .wrapper{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap:4rem;
     justify-content: start;
     padding-inline: 2rem;
     margin-top: 6rem;
@@ -85,11 +85,11 @@
     background-image: none;
     padding-inline: 0;
     animation: float-mobile 10s ease-in-out infinite;
-
   }
   .contentSteps{
-    width: 100%;
-    gap: 1.5rem;
+    width: 50%;
+    align-items: start;
+    gap: 3rem;
     animation: none 15s ease-in-out infinite;
   }
   
@@ -101,4 +101,17 @@
     font-size: clamp(1rem, 1.2vw, 1.5rem);
     font-style: italic;
   }
+}
+
+@media (max-width:768px) {
+  .wrapper{
+    gap: 2rem;
+  }
+  .contentSteps{
+    width: 90%;
+    margin-top: 2rem;
+    gap: 1.5rem;
+    animation: none 15s ease-in-out infinite;
+  }
+  
 }

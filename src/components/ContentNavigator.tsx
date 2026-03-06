@@ -14,6 +14,7 @@ const pages = [
   lazy(() => import("./FifthPage").then((m) => ({ default: m.FifthPage }))),
   lazy(() => import("./SixthPage").then((m) => ({ default: m.SixthPage }))),
   lazy(() => import("./SeventhPage").then((m) => ({ default: m.SeventhPage }))),
+  lazy(() => import("./EighthPage").then((m) => ({ default: m.EighthPage }))),
 ];
 
 export default function ContentNavigator() {
@@ -26,6 +27,7 @@ export default function ContentNavigator() {
     design: 4,
     strategy:5,
     process:6,
+    results:7,
   };
 
   useEffect(() => {
