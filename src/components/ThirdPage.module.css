@@ -1,54 +1,60 @@
-.wrapper{
+.wrapper {
   display: grid;
   grid-template-columns: repeat(7, 0.8fr);
   padding-inline: 10%;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   background: url("../assets/images/background-page2.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-.image{
+.image {
   grid-column: span 4;
   height: 85vh;
   animation: float 10s ease-in-out infinite;
   animation-delay: 0s;
 }
-.title{
+.title {
   grid-column: span 3;
   font-family: var(--font-tilt-warp);
   text-align: right;
   width: 80%;
   margin-inline-start: auto;
-  font-size: clamp(1.5rem,3vw,4rem);
+  font-size: clamp(1.5rem, 3vw, 4rem);
   letter-spacing: 2px;
   animation: float 10s ease-in-out infinite;
   animation-delay: 1s;
-
 }
-.highlight{
+.highlight {
   color: var(--color-secondary);
 }
 @keyframes float {
-  0%, 100% { transform: translateY(0); transform: translateX(0);}
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 @media (max-width: 768px) {
-  .wrapper{
+  .wrapper {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
   }
-  .image{
+  .image {
     height: 40vh;
     width: auto;
   }
-  .title{
+  .title {
     text-align: center;
     width: 100%;
     margin-inline-start: 0;
   }
 }
+

@@ -1,0 +1,52 @@
+.wrapper {
+  width: 100%;
+  min-height: 100dvh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  align-items: center;
+  gap: 25px;
+  padding: 90px 30px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: "TiltWarp", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.titleSecondary {
+  color: #00d1ff;
+}
+
+.description {
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  font-family: "Jakarta";
+  text-align: center;
+  max-width: 800px;
+}
+
+.features {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .features {
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
