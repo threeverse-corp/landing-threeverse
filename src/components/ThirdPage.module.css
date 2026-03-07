@@ -4,7 +4,7 @@
   padding-inline: 10%;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   background: url("../assets/images/background-page2.svg");
   background-size: cover;
   background-repeat: no-repeat;
