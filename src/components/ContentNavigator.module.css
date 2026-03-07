@@ -2,7 +2,9 @@
   position: relative;
   width: 100%;
   min-height: 100dvh;
-  height: 100dvh;
+  height: auto;
+  display: flex;
+  align-items: center;
 }
 
 .pages {
@@ -83,24 +85,30 @@
   height: 4rem;
   width: auto;
 }
-.loaderPage{
+.loaderPage {
   position: absolute;
   inset: 0;
 
   background: radial-gradient(
     circle at center,
-    rgba(0,209,255,0.2),
-    rgba(90,57,240,0.1),
+    rgba(0, 209, 255, 0.2),
+    rgba(90, 57, 240, 0.1),
     transparent 70%
   );
 
   animation: pagePulse 2s ease-in-out infinite;
 }
 
-@keyframes pagePulse{
-  0%{ opacity: 0.2; }
-  50%{ opacity: 0.7; }
-  100%{ opacity: 1; }
+@keyframes pagePulse {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
@@ -127,4 +135,3 @@
   opacity: 0;
   will-change: opacity, transform;
 }
-
