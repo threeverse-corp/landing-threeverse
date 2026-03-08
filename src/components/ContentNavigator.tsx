@@ -30,9 +30,6 @@ export default function ContentNavigator() {
     strategy: 5,
     process: 6,
     results: 7,
-    strategy: 5,
-    process: 6,
-    results: 7,
   };
 
   useEffect(() => {
@@ -87,5 +84,3 @@ export default function ContentNavigator() {
     </div>
   );
 }
-
-
