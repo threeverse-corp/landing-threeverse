@@ -24,7 +24,7 @@ const FeaturesConfig = [
 
 export const NinthPage = () => {
   return (
-    <div className={styles.wrapper}>
+    <div id="pledge" className={styles.wrapper}>
       <div className={styles.title}>
         Nuestro <span className={styles.titleSecondary}>compromiso</span> con tu
         negocio

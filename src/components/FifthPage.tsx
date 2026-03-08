@@ -8,7 +8,7 @@ export const FifthPage = () => {
     title="DISEÑO"
     subtitle={
       <>
-        Diseñamos<span className={styles.highlight}>la identidad</span> que conecta y posiciona
+        Diseñamos<span className={styles.highlight}> la identidad</span> que conecta y posiciona
       </>
     }
     image={DesignImage.src}

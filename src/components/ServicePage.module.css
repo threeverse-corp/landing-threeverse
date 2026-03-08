@@ -5,29 +5,28 @@
   height: 100vh;
   align-items: center;
   justify-items: center;
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .textRight {
-  grid-template-areas: "anim anim anim anim anim text text";
+  grid-template-areas: "img img img img img text text";
   padding-right: 10%;
   padding-left: 5%;
 }
 
 .textLeft {
-  grid-template-areas: "text text anim anim anim anim anim";
+  grid-template-areas: "text text img img img img img";
   padding-right: 5%;
   padding-left: 10%;
 }
 
 .image{
-  grid-area: anim;
-  height: 100%;
+  grid-area: img;
+  height: auto;
   max-height: 100vh;
-  width: 90%;
+  width: 95%;
   justify-self: center;
   align-self: center;
   overflow: hidden;
@@ -36,7 +35,6 @@
 
 .textContent {
   grid-area: text;
-  justify-self: stretch;
   align-self: start;
   margin-top: 9rem;
   margin-bottom: auto;
@@ -119,22 +117,22 @@
     flex-direction: column-reverse;
     gap: 1rem;
     justify-content: start;
+    align-items: center;
     padding-left: 5%;
     padding-right: 5%;
     height: 100vh;
   }
 
   .image{
-    height: 55vh;
-    width: 100%;
+    width: 60%;
     overflow: visible;
   }
 
   .textContent {
     margin-top: 6rem;
     animation: float-mobile 10s ease-in-out infinite;
-    text-align: center;
-    justify-items: center;
+    margin-inline: auto;
+    margin-bottom: 1rem;
   }
 
   .title {
@@ -157,4 +155,11 @@
     font-size: clamp(1.2rem, 1.7vw, 2rem);
     gap: 0.5rem;
   }
+}
+
+@media (max-width:480px){
+  .image{
+    width: 100%;
+  }
+
 }
