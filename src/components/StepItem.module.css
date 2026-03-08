@@ -80,13 +80,14 @@
 }
 @keyframes float-mobile {
   0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(10px); }
+  50% { transform: translateY(-10px); }
 }
 @media (max-width: 1024px) {
   .step{
     animation: float-mobile 15s ease-in-out infinite;
     justify-content: center;
     gap: 1rem;
+    animation-delay: 1ss;
   }
   .stepNumber{
     height: 4rem;

@@ -30,6 +30,8 @@ export default function ContentNavigator() {
     strategy: 5,
     process: 6,
     results: 7,
+    pledge: 8,
+    contact: 9
   };
 
   useEffect(() => {

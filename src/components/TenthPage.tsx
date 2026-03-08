@@ -6,7 +6,7 @@ import Button from "../ui/button/Button";
 
 export const TenthPage = () => {
   return (
-    <div className={styles.wrapper}>
+    <div id="contact" className={styles.wrapper}>
       <img src={Semicircle.src} className={styles.planet} alt="planet" />
       <img src={Ring.src} className={styles.ring} alt="orbit" />
       <div className={styles.content}>

@@ -8,26 +8,28 @@
   text-align: center;
   overflow: hidden;
   background: url("../assets/images/background-page10.svg");
-  background-size: 80%;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: 0% 0%;
 }
 
 .planet {
   position: absolute;
-  width: 80%;
+  width: 100%;
+  height: 100vh;
   top: 4%;
-  left: 11%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 0;
 }
 
 .ring {
   position: absolute;
-  width: 90%;
+  width: 98%;
   top: 30%;
-  left: 5%;
   opacity: 0.5;
   animation: float 14s ease-in-out infinite;
+  animation-delay: 0s;
   z-index: 1;
 }
 
@@ -35,12 +37,16 @@
   position: relative;
   z-index: 2;
   animation: float 10s ease-in-out infinite;
-  transform: translateY(100px);
+  animation-delay: 1s;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .title {
   font-family: var(--font-tilt-warp);
-  font-size: clamp(1rem, 3vw, 5rem);
+  font-size: clamp(2rem, 3.5vw, 4rem);
   letter-spacing: 2px;
 }
 
@@ -49,21 +55,22 @@
 }
 
 .subtitle {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 1.8vw, 2rem);
   opacity: 0.8;
 }
 
 .button {
   font-weight: bold;
   font-size: clamp(0.9rem, 3vw, 1rem);
-  background: #00d1ff !important;
+  background: var(--color-secondary);
   border-radius: 999px !important;
   padding: clamp(0.7rem, 2vw, 0.9rem) clamp(1.2rem, 3vw, 2rem);
   box-shadow: 4px 4px 1.3px 0px #00d1ff80;
   transition: all 0.2s ease;
   animation: breathe 6s ease-in-out infinite;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  width: fit-content;
+  margin-inline:auto;
 }
 
 .button:hover {
@@ -92,76 +99,46 @@
 }
 
 @media (max-width:1024px){
-
-  .planet{
-    display: none;
+  .wrapper{
+    padding-inline: 1rem;
+    background-size: cover;
   }
-
-  .ring{
-    display: none;
-  }
-
+  
   .content{
-    transform: translateY(60px);
+    top: 10%;
   }
 
-  .title{
-    font-size: clamp(1.4rem,4vw,3.5rem);
-  }
-
-  .subtitle{
-    font-size: clamp(0.9rem,2vw,1.1rem);
-  }
 
 }
 
 @media (max-width:768px){
-
-  .wrapper{
-    padding-inline: 1rem;
-    background-position: center top;
-  }
-
-  .planet{
-    display: none;
-  }
-
-  .ring{
-    display: none;
-  }
-
   .content{
-    transform: translateY(40px);
+    top: 0;
   }
-
   .title{
-    width: 90%;
+    width: 95%;
     margin-inline: auto;
-    letter-spacing: 0px;
-    font-size: clamp(1.3rem,6vw,2.5rem);
   }
-
   .subtitle{
     width: 90%;
     margin-inline: auto;
   }
-
-}
-
-@media (max-width:480px){
-
   .planet{
-    display: none;
+    width: 200%;
+    top:20%;
+    left: unset;
+    right: -5%;
+    transform: rotate(90deg);
+    opacity: 0.6;
   }
 
   .ring{
     display: none;
   }
+  
+}
 
-  .content{
-    transform: translateY(20px);
-  }
-
+@media (max-width:480px){
   .button{
     font-size: 0.85rem;
     padding: 0.7rem 1.4rem;

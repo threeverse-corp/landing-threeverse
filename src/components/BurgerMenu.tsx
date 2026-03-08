@@ -13,8 +13,8 @@ const menuItems = [
   },
   { label: "Proceso", href: "#process" },
   { label: "Resultados", href: "#results" },
-  { label: "Inversión", href: "#" },
-  { label: "Contacto", href: "#" },
+  { label: "Compromiso", href: "#pledge" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 const solutionsItem = menuItems.find((m) => m.label === "Soluciones")!;
