@@ -3,6 +3,7 @@ import styles from "./TenthPage.module.css";
 import Semicircle from "../assets/images/semicircle.svg";
 import Ring from "../assets/images/ring.svg";
 import Button from "../ui/button/Button";
+import handleWhatsAppCLick from "../utils/whatsapp.ts";
 
 export const TenthPage = () => {
   return (
@@ -20,11 +21,9 @@ export const TenthPage = () => {
         </p>
         <Button
           customClass={styles.button}
-          text="Agendar diagnóstico estratégico"
+          text="SOLICITA UNA COTIZACIÓN"
           variant="primary"
-          onClick={() => {
-            console.log("agendando diagnóstico");
-          }}
+          onClick={handleWhatsAppCLick}
         />
       </div>
     </div>
