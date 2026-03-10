@@ -1,6 +1,7 @@
 import LogoIcon from "../assets/icons/logo-icon.svg";
 import styles from "./FirstPage.module.css";
 import Button from "../ui/button/Button";
+import handleWhatsAppClick from "../utils/whatsapp.ts";
 
 export const FirstPage = () => {
   return (
@@ -11,11 +12,9 @@ export const FirstPage = () => {
       </h2>
       <Button
         customClass={styles.button}
-        text="AGENDAR UNA REUNIÓN"
+        text="SOLICITA UNA COTIZACIÓN"
         variant="primary"
-        onClick={() => {
-          console.log("agendando");
-        }}
+        onClick={handleWhatsAppClick}
       />
     </div>
   );
