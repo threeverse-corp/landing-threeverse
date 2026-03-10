@@ -6,7 +6,7 @@ type Props = {
   textStar?: string;
   textEnd?: string;
   textHighlight: string;
-  offset: number
+  offset: number;
 };
 
 export default function StepItem({
@@ -15,18 +15,17 @@ export default function StepItem({
   textStar,
   textHighlight,
   textEnd,
-  offset = 0
+  offset = 0,
 }: Props) {
   return (
     <div
       className={styles.step}
       style={{ transform: `translateX(${offset}px)` }}
     >
-
       <div className={styles.stepNumber}>
         <p className={styles.number}>{number}</p>
       </div>
-        
+
       <div className={styles.line} />
 
       <div className={styles.content}>
@@ -37,7 +36,7 @@ export default function StepItem({
           {textEnd}
         </p>
       </div>
-
     </div>
   );
 }
+

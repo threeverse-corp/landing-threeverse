@@ -39,6 +39,7 @@ export const NinthPage = () => {
             title={feature.title}
             description={feature.description}
             icon={feature.icon}
+            key={feature.title}
           />
         ))}
       </section>

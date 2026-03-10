@@ -6,7 +6,6 @@ import planet2 from "../assets/images/planet2.svg";
 
 import styles from "./EighthPage.module.css";
 
-
 const results = [
   {
     planet: planet2.src,
@@ -53,12 +52,13 @@ export const EighthPage = () => {
         <img src={orbitImage.src} className={styles.orbit} alt="" />
         <p className={styles.centerLabel}>Tu Negocio</p>
 
-        {results.map(({ position, ...props }) => (
-          <div className={`${styles.results} ${styles[position]}`}>
-            <ResultItem {...props} />
+        {results.map(({ position, ...props }, index) => (
+          <div className={`${styles.results} ${styles[position]}`} key={index}>
+            <ResultItem {...props}  />
           </div>
         ))}
       </div>
     </div>
   );
 };
+
