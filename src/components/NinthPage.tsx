@@ -16,7 +16,7 @@ const FeaturesConfig = [
     icon: ShakeHandsIcon.src,
   },
   {
-    title: "Nuestro objetivo no es entregar un diseño bonito",
+    title: "Nuestro objetivo no es entregar solo un diseño bonito",
     description: "Es ayudarte a crecer de forma sostenible",
     icon: GrowthStatsIcon.src,
   },
