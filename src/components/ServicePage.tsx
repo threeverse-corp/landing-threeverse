@@ -1,11 +1,12 @@
 import styles from "./ServicePage.module.css";
+import type { ElementType } from "react";
 
 type Props = {
   id: string;
   title: string;
   subtitle: React.ReactNode;
   features: string[];
-  image: string;
+  Image: ElementType | string;
   variant?: "textRight" | "textLeft";
   backgroundImage?: string;
 };
@@ -15,7 +16,7 @@ export const ServicePage = ({
   title,
   subtitle,
   features,
-  image,
+  Image,
   variant = "textRight",
   backgroundImage,
 }: Props) => {
@@ -29,8 +30,11 @@ export const ServicePage = ({
           : undefined
       }
     >
-      <img src={image} className={styles.image} />
-
+      {typeof Image === "string" ? (
+        <img src={Image} className={styles.image} />
+      ) : (
+        <Image className={styles.image} />
+      )}
       <div className={styles.textContent}>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>

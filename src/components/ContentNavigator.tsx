@@ -1,22 +1,33 @@
-import { useEffect, useState, lazy, Suspense } from "react";
+import { useEffect, useState } from "react";
 
-import LeftCircle from "../assets/icons/left-circle.svg";
-import RightCircle from "../assets/icons/right-circle.svg";
+import LeftCircleIcon from "../assets/icons/LeftCircleIcon";
+import { RightCircleIcon } from "../assets/icons/RightCircleIcon";
 import styles from "./ContentNavigator.module.css";
 import Button from "../ui/button/Button";
 import Logo from "../assets/images/Logo.svg";
 
+import { FirstPage } from "./FirstPage";
+import { SecondPage } from "./SecondPage";
+import { ThirdPage } from "./ThirdPage";
+import { FourthPage } from "./FourthPage";
+import { FifthPage } from "./FifthPage";
+import { SixthPage } from "./SixthPage";
+import { SeventhPage } from "./SeventhPage";
+import { EighthPage } from "./EighthPage";
+import { NinthPage } from "./NinthPage";
+import { TenthPage } from "./TenthPage";
+
 const pages = [
-  lazy(() => import("./FirstPage").then((m) => ({ default: m.FirstPage }))),
-  lazy(() => import("./SecondPage").then((m) => ({ default: m.SecondPage }))),
-  lazy(() => import("./ThirdPage").then((m) => ({ default: m.ThirdPage }))),
-  lazy(() => import("./FourthPage").then((m) => ({ default: m.FourthPage }))),
-  lazy(() => import("./FifthPage").then((m) => ({ default: m.FifthPage }))),
-  lazy(() => import("./SixthPage").then((m) => ({ default: m.SixthPage }))),
-  lazy(() => import("./SeventhPage").then((m) => ({ default: m.SeventhPage }))),
-  lazy(() => import("./EighthPage").then((m) => ({ default: m.EighthPage }))),
-  lazy(() => import("./NinthPage").then((m) => ({ default: m.NinthPage }))),
-  lazy(() => import("./TenthPage").then((m) => ({ default: m.TenthPage }))),
+  FirstPage,
+  SecondPage,
+  ThirdPage,
+  FourthPage,
+  FifthPage,
+  SixthPage,
+  SeventhPage,
+  EighthPage,
+  NinthPage,
+  TenthPage,
 ];
 
 export default function ContentNavigator() {
@@ -31,7 +42,7 @@ export default function ContentNavigator() {
     process: 6,
     results: 7,
     pledge: 8,
-    contact: 9
+    contact: 9,
   };
 
   useEffect(() => {
@@ -60,18 +71,14 @@ export default function ContentNavigator() {
   return (
     <div className={styles.navigator}>
       {current > 0 && <img src={Logo.src} alt="logo" className={styles.logo} />}
-      <div className={styles.pages}>
-        <Suspense fallback={<div className={styles.loaderPage} />}>
-          <div key={current} className={styles.pageFadeIn}>
-            <ActivePage />
-          </div>
-        </Suspense>
+      <div key={current} className={styles.pages}>
+        <ActivePage />
       </div>
 
       {current > 0 && (
         <Button
           customClass={`${styles.navBtn} ${styles.left}`}
-          Icon={LeftCircle.src}
+          Icon={LeftCircleIcon}
           onClick={goPrev}
         />
       )}
@@ -79,7 +86,7 @@ export default function ContentNavigator() {
       {current < total - 1 && (
         <Button
           customClass={`${styles.navBtn} ${styles.right}`}
-          Icon={RightCircle.src}
+          Icon={RightCircleIcon}
           onClick={goNext}
         />
       )}

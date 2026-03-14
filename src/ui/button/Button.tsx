@@ -1,8 +1,9 @@
+import type { ElementType } from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
   text?: string;
-  Icon?: string;
+  Icon?: ElementType;
   onClick?: () => void;
   type?: "button" | "submit";
   variant?: "primary" | "secondary" | "icon";
@@ -32,8 +33,8 @@ export default function Button({
       data-action={action}
       className={`${styles.btn} ${styles[variant]} ${customClass}`}
     >
-      {Icon && typeof Icon === "string" && (
-        <img src={Icon} className={styles.iconElement} />
+      {Icon  && (
+        <Icon className={styles.iconElement} />
       )}
       {text && <span>{text}</span>}
     </button>

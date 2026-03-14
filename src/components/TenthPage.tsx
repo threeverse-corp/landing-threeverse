@@ -1,7 +1,7 @@
 import styles from "./TenthPage.module.css";
 
 import Semicircle from "../assets/images/semicircle.svg";
-import Ring from "../assets/images/ring.svg";
+import { RingImage } from "../assets/images/RingImage.tsx";
 import Button from "../ui/button/Button";
 import handleWhatsAppCLick from "../utils/whatsapp.ts";
 
@@ -9,7 +9,7 @@ export const TenthPage = () => {
   return (
     <div id="contact" className={styles.wrapper}>
       <img src={Semicircle.src} className={styles.planet} alt="planet" />
-      <img src={Ring.src} className={styles.ring} alt="orbit" />
+      <RingImage className={styles.ring} alt="orbit" />
       <div className={styles.content}>
         <h1 className={styles.title}>
           EL CRECIMIENTO NO ES CASUAL

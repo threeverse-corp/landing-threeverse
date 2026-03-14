@@ -1,4 +1,4 @@
-import LogoIcon from "../assets/icons/logo-icon.svg";
+import { LogoIcon } from "../assets/icons/LogoIcon.tsx";
 import styles from "./FirstPage.module.css";
 import Button from "../ui/button/Button";
 import handleWhatsAppClick from "../utils/whatsapp.ts";
@@ -6,7 +6,7 @@ import handleWhatsAppClick from "../utils/whatsapp.ts";
 export const FirstPage = () => {
   return (
     <div className={styles.wrapper} id="hero">
-      <img src={LogoIcon.src} className={styles.logo} loading="lazy" />
+      <LogoIcon className={styles.logo} />
       <h2 className={styles.title}>
         Desarrollo, diseño y estrategia en un solo universo
       </h2>

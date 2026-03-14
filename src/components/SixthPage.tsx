@@ -1,6 +1,6 @@
 import styles from "./ServicePage.module.css";
 import { ServicePage } from "./ServicePage";
-import StrategyIcon from "../assets/icons/strategy-icon.svg";
+import { StrategyIcon } from "../assets/icons/StrategyIcon";
 
 export const SixthPage = () => {
   return (
@@ -13,7 +13,7 @@ export const SixthPage = () => {
           <span className={styles.highlight}>crecimiento</span>
         </>
       }
-      image={StrategyIcon.src}
+      Image={StrategyIcon}
       features={[
         "Publicidad digital",
         "Consultoría",
