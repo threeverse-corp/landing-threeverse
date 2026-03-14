@@ -12,11 +12,12 @@
   position: relative;
   width: 100%;
   min-height: 100dvh;
+  display: flex;
+  align-items: center;
   pointer-events: auto;
   overflow: hidden;
   animation: fadeIn 0.5s ease-out forwards;
   opacity: 0;
-  will-change: opacity, transform;
 }
 
 .pages::before {
