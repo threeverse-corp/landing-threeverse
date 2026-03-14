@@ -1,24 +1,24 @@
 import { FeatureCard } from "./FeatureCard";
-import PeopleChattingIcon from "../assets/icons/people-chating.svg";
-import ShakeHandsIcon from "../assets/icons/shake-hands.svg";
-import GrowthStatsIcon from "../assets/icons/growth-stats.svg";
 import styles from "./NinthPage.module.css";
+import { GrowthStatsIcon } from "../assets/icons/GrowthStatsIcon";
+import { ShakeHandsIcon } from "../assets/icons/ShakeHandsIcon";
+import { PeopleChattingIcon } from "../assets/icons/PeopleChatingIcon";
 
 const FeaturesConfig = [
   {
     title: "Te explicamos cada etapa del proyecto antes de avanzar",
     description: "Sin costos ocultos. Sin sorpresas",
-    icon: PeopleChattingIcon.src,
+    icon: PeopleChattingIcon,
   },
   {
     title: "Estarás en contacto con nosotros durante todo el proceso",
     description: "Respondemos, escuchamos y ajustamos cuando sea necesario",
-    icon: ShakeHandsIcon.src,
+    icon: ShakeHandsIcon,
   },
   {
     title: "Nuestro objetivo no es entregar solo un diseño bonito",
     description: "Es ayudarte a crecer de forma sostenible",
-    icon: GrowthStatsIcon.src,
+    icon: GrowthStatsIcon,
   },
 ];
 
@@ -38,7 +38,7 @@ export const NinthPage = () => {
           <FeatureCard
             title={feature.title}
             description={feature.description}
-            icon={feature.icon}
+            Icon={feature.icon}
             key={feature.title}
           />
         ))}

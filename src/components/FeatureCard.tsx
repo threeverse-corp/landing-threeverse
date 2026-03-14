@@ -1,17 +1,18 @@
 import styles from "./FeatureCard.module.css";
+import type { ElementType } from "react";
 
 interface FeatureCardProps {
   title: string;
   description: string;
-  icon: string;
+  Icon: ElementType;
 }
 
-export const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
+export const FeatureCard = ({ title, description, Icon }: FeatureCardProps) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>{title}</h2>
       <h3 className={styles.description}>{description}</h3>
-      <img src={icon} loading="lazy" className={styles.icon} />
+      <Icon className={styles.icon} />
     </div>
   );
 };
