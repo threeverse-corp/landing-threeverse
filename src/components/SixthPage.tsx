@@ -21,7 +21,6 @@ export const SixthPage = () => {
         "Escalabilidad",
       ]}
       variant="textRight"
-      backgroundImage="/src/assets/images/background-page4.svg"
     />
   );
 };
