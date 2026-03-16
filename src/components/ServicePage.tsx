@@ -21,8 +21,9 @@ export const ServicePage = ({
   backgroundImage,
 }: Props) => {
   return (
-    <div
+    <section
       id={id}
+      aria-labelledby={`${id}-title`}
       className={`${styles.wrapper} ${styles[variant]}`}
       style={
         backgroundImage
@@ -31,12 +32,16 @@ export const ServicePage = ({
       }
     >
       {typeof Image === "string" ? (
-        <img src={Image} className={styles.image} />
+        <img
+          src={Image}
+          className={styles.image}
+          alt={`Ilustración de servicio: ${title}`}
+        />
       ) : (
         <Image className={styles.image} />
       )}
       <div className={styles.textContent}>
-        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.title}>{title}</h2>
         <p className={styles.subtitle}>{subtitle}</p>
 
         <div className={styles.features}>
@@ -45,6 +50,6 @@ export const ServicePage = ({
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -3,19 +3,29 @@ import styles from "./TenthPage.module.css";
 import Semicircle from "../assets/images/semicircle.svg";
 import Button from "../ui/button/Button";
 import handleWhatsAppCLick from "../utils/whatsapp.ts";
-import RingImage from "../assets/images/ring-image.svg";
+import Ring from "../assets/images/ring.svg";
 
 export const TenthPage = () => {
   return (
-    <div id="contact" className={styles.wrapper}>
-      <img src={Semicircle.src} className={styles.planet} alt="planet" />
-      <img src={RingImage.src} className={styles.ring} alt="orbit" />
+    <section id="contact" className={styles.wrapper}>
+      <img
+        src={Semicircle.src}
+        className={styles.planet}
+        alt="planet"
+        aria-hidden="true"
+      />
+      <img
+        src={Ring.src}
+        className={styles.ring}
+        alt="orbit"
+        aria-hidden="true"
+      />
       <div className={styles.content}>
-        <h1 className={styles.title}>
+        <h2 className={styles.title} id="contact-title">
           EL CRECIMIENTO NO ES CASUAL
           <br />
           ES <span className={styles.highlight}>ESTRATÉGICO</span>
-        </h1>
+        </h2>
         <p className={styles.subtitle}>
           Diseñemos el sistema que tu negocio necesita
         </p>
@@ -24,8 +34,9 @@ export const TenthPage = () => {
           text="SOLICITA UNA COTIZACIÓN"
           variant="primary"
           onClick={handleWhatsAppCLick}
+          ariaLabel="Solicitar cotización por WhatsApp (abre en una nueva ventana)"
         />
       </div>
-    </div>
+    </section>
   );
 };

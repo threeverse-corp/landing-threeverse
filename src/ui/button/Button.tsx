@@ -11,6 +11,7 @@ interface ButtonProps {
   customClass?: string;
   id?: string;
   action?: string;
+  ariaLabel?: string;
 }
 
 export default function Button({
@@ -23,19 +24,19 @@ export default function Button({
   customClass = "",
   id,
   action,
+  ariaLabel = "",
 }: ButtonProps) {
   return (
     <button
       id={id}
+      aria-label={ariaLabel}
       type={type}
       onClick={onClick}
       disabled={disabled}
       data-action={action}
       className={`${styles.btn} ${styles[variant]} ${customClass}`}
     >
-      {Icon  && (
-        <Icon className={styles.iconElement} />
-      )}
+      {Icon && <Icon className={styles.iconElement} />}
       {text && <span>{text}</span>}
     </button>
   );

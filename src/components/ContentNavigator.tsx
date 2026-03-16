@@ -71,12 +71,13 @@ export default function ContentNavigator() {
   return (
     <div className={styles.navigator}>
       {current > 0 && <img src={Logo.src} alt="logo" className={styles.logo} />}
-      <div key={current} className={styles.pages}>
+      <main key={current} className={styles.pages} aria-live="polite">
         <ActivePage />
-      </div>
+      </main>
 
       {current > 0 && (
         <Button
+          ariaLabel="Go to previous page"
           customClass={`${styles.navBtn} ${styles.left}`}
           Icon={LeftCircleIcon}
           onClick={goPrev}
@@ -85,6 +86,7 @@ export default function ContentNavigator() {
 
       {current < total - 1 && (
         <Button
+          ariaLabel="Go to next page"
           customClass={`${styles.navBtn} ${styles.right}`}
           Icon={RightCircleIcon}
           onClick={goNext}

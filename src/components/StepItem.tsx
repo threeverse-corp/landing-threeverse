@@ -22,11 +22,11 @@ export default function StepItem({
       className={styles.step}
       style={{ transform: `translateX(${offset}px)` }}
     >
-      <div className={styles.stepNumber}>
+      <div className={styles.stepNumber} aria-hidden="true">
         <p className={styles.number}>{number}</p>
       </div>
 
-      <div className={styles.line} />
+      <div className={styles.line} aria-hidden="true" />
 
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
