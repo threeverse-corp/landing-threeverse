@@ -21,7 +21,6 @@ export const FifthPage = () => {
         "Landings de alto impacto",
       ]}
       variant="textLeft"
-      backgroundImage="/src/assets/images/background-page5.svg"
     />
   );
 };

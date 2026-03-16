@@ -8,7 +8,6 @@ type Props = {
   features: string[];
   Image: ElementType | string;
   variant?: "textRight" | "textLeft";
-  backgroundImage?: string;
 };
 
 export const ServicePage = ({
@@ -18,18 +17,12 @@ export const ServicePage = ({
   features,
   Image,
   variant = "textRight",
-  backgroundImage,
 }: Props) => {
   return (
     <section
       id={id}
       aria-labelledby={`${id}-title`}
       className={`${styles.wrapper} ${styles[variant]}`}
-      style={
-        backgroundImage
-          ? { backgroundImage: `url(${backgroundImage})` }
-          : undefined
-      }
     >
       {typeof Image === "string" ? (
         <img

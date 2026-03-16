@@ -20,7 +20,6 @@ export const FourthPage = () => {
         "Sistemas escalables",
       ]}
       variant="textRight"
-      backgroundImage="/src/assets/images/background-page4.svg"
     />
   );
 };
