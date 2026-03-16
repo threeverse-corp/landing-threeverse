@@ -31,21 +31,24 @@ const steps = [
 
 export const SeventhPage = () => {
   return (
-    <div id="process" className={styles.wrapper}>
+    <section id="process" className={styles.wrapper}>
       <div className={styles.contentTitle}>
-        <h1 className={styles.title}>Así construimos tu universo digital</h1>
+        <h2 className={styles.title} id="process-title">
+          Así construimos tu universo digital
+        </h2>
         <p className={styles.subtitle}>
           Cada proyecto sigue un{" "}
           <span className={styles.highlight}>proceso estratégico</span> diseñado
           para escalar
         </p>
       </div>
-      <div className={styles.contentSteps}>
+      <ol className={styles.contentSteps}>
         {steps.map((step, index) => (
-          <StepItem number={index + 1} {...step} key={index} />
+          <li key={index} className={styles.stepListItem}>
+            <StepItem number={index + 1} {...step} />
+          </li>
         ))}
-      </div>
-    </div>
+      </ol>
+    </section>
   );
 };
-

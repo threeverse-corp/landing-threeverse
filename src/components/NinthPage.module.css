@@ -39,6 +39,7 @@
 }
 
 .features {
+  list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -47,16 +48,26 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 @keyframes float-mobile {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY( -10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 899px) {
-  .wrapper{
+  .wrapper {
     animation: float-mobile 10s ease-in-out infinite;
     padding-top: 0rem;
   }
@@ -72,10 +83,9 @@
   }
 }
 
-@media (max-width:480px){
-
+@media (max-width: 480px) {
   .features {
     width: 90%;
   }
-
 }
+

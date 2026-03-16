@@ -24,25 +24,26 @@ const FeaturesConfig = [
 
 export const NinthPage = () => {
   return (
-    <div id="pledge" className={styles.wrapper}>
-      <div className={styles.title}>
+    <section id="pledge" className={styles.wrapper}>
+      <h2 className={styles.title}>
         Nuestro <span className={styles.titleSecondary}>compromiso</span> con tu
         negocio
-      </div>
-      <h3 className={styles.description}>
+      </h2>
+      <p className={styles.description}>
         Cuando trabajas con nosotros, puedes esperar claridad, acompañamiento y
         estructura.
-      </h3>
-      <section className={styles.features}>
+      </p>
+      <ul className={styles.features}>
         {FeaturesConfig.map((feature) => (
-          <FeatureCard
-            title={feature.title}
-            description={feature.description}
-            Icon={feature.icon}
-            key={feature.title}
-          />
+          <li key={feature.title} className={styles.featureItem}>
+            <FeatureCard
+              title={feature.title}
+              description={feature.description}
+              Icon={feature.icon}
+            />
+          </li>
         ))}
-      </section>
-    </div>
+      </ul>
+    </section>
   );
 };

@@ -45,20 +45,21 @@ const results = [
 
 export const EighthPage = () => {
   return (
-    <div className={styles.wrapper} id="results">
-      <h1 className={styles.title}>Resultados que transforman negocios</h1>
+    <section className={styles.wrapper} id="results">
+      <h2 className={styles.title} id="results-title">
+        Resultados que transforman negocios
+      </h2>
 
       <div className={styles.orbitContainer}>
-        <img src={orbitImage.src} className={styles.orbit} alt="" />
+        <img src={orbitImage.src} className={styles.orbit} alt="orbit-image" />
         <p className={styles.centerLabel}>Tu Negocio</p>
 
         {results.map(({ position, ...props }, index) => (
           <div className={`${styles.results} ${styles[position]}`} key={index}>
-            <ResultItem {...props}  />
+            <ResultItem {...props} />
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
-

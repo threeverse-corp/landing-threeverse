@@ -5,17 +5,18 @@ import handleWhatsAppClick from "../utils/whatsapp.ts";
 
 export const FirstPage = () => {
   return (
-    <div className={styles.wrapper} id="hero">
+    <section className={styles.wrapper} id="hero">
       <LogoIcon className={styles.logo} />
-      <h2 className={styles.title}>
+      <h1 className={styles.title}>
         Desarrollo, diseño y estrategia en un solo universo
-      </h2>
+      </h1>
       <Button
         customClass={styles.button}
         text="SOLICITA UNA COTIZACIÓN"
         variant="primary"
         onClick={handleWhatsAppClick}
+        ariaLabel="Solicitar cotización por WhatsApp (abre en una nueva ventana)"
       />
-    </div>
+    </section>
   );
 };
